@@ -31,6 +31,7 @@ services:
       DB_NAME: ${DB_NAME}
       DB_USER: ${DB_USER}
       DB_PWD: ${DB_PWD}
+      JWT_SECRET: ${JWT_SECRET}
     logging:
       driver: "json-file"
       options:

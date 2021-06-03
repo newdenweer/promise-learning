@@ -11,15 +11,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c3a5519-de13-49ef-9e83-18c050450a59" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/authController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/authMiddleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/authController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/models/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +73,9 @@
       <workItem from="1622457786281" duration="1290000" />
       <workItem from="1622459673501" duration="9668000" />
       <workItem from="1622528535929" duration="27496000" />
-      <workItem from="1622617833743" duration="19573000" />
+      <workItem from="1622617833743" duration="21328000" />
+      <workItem from="1622642411935" duration="3299000" />
+      <workItem from="1622705104394" duration="3959000" />
     </task>
     <servers />
   </component>

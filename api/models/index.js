@@ -39,6 +39,6 @@ syncPromise
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
 
-console.log(Object.keys(db));
+//console.log(Object.keys(db));
 
 module.exports = db;

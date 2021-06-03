@@ -3,7 +3,8 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
 const generateToken = id => {
-	let secret = 'SECRET_KEY_12345';
+	let secret = process.env.JWT_SECRET;
+	//console.log(secret);
 	let data = {
 		id,
 	};
@@ -45,14 +46,11 @@ const login = (req, res) => {
 			if (!user) {
 				return res.status(400).json({ msg: 'User is not found' });
 			}
-			console.log(user.dataValues.password);
-			let comparisonPasswords = bcrypt.compareSync(password, user.dataValues.password);
+			let comparisonPasswords = bcrypt.compareSync(password, user.password);
 			if (!comparisonPasswords) {
 				return res.status(400).json({ msg: 'Invalid password' });
 			}
-			console.log(user.dataValues.id);
-			let token = generateToken(user.dataValues.id);
-			console.log({ token });
+			let token = generateToken(user.id);
 			return res.status(200).json({ token });
 		});
 	} catch (e) {
@@ -61,4 +59,24 @@ const login = (req, res) => {
 	}
 };
 
-module.exports = { login, registration };
+const getUsers = (req, res) => {
+	try {
+		const usersPromise = db.User.findAll();
+		usersPromise
+			.then(users => {
+				if (!users) {
+					return res.status(400).json({ msg: 'GetUser error' });
+				}
+				//console.log(users.map(u => u.toJSON()));
+				return res.status(200).json(users);
+			})
+			.catch(err => {
+				console.log(err.message);
+			});
+	} catch (e) {
+		console.log(e);
+		return res.status(400).json({ msg: 'GetUser error' });
+	}
+};
+
+module.exports = { login, registration, getUsers };
