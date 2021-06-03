@@ -1,10 +1,9 @@
-const db = require('../api/models/index');
+const db = require('../models');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
 const generateToken = id => {
 	let secret = process.env.JWT_SECRET;
-	//console.log(secret);
 	let data = {
 		id,
 	};

@@ -4,8 +4,6 @@ const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
-const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
 const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PWD, {
@@ -31,14 +29,12 @@ Object.keys(db).forEach(modelName => {
 const syncPromise = sequelize.sync();
 
 syncPromise
-	.then(result => {
-		console.log('ok');
+	.then(() => {
+		console.log('sequelize.sync() is OK');
 	})
 	.catch(err => console.log(err));
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
-
-//console.log(Object.keys(db));
 
 module.exports = db;

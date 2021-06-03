@@ -1,7 +1,5 @@
-const Sequelize = require('sequelize');
-const models = require('./models');
 const express = require('express');
-const authRouter = require('./router');
+const authRouter = require('./router/authRouter');
 const app = express();
 
 app.use(express.json());

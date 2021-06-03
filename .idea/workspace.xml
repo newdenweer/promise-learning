@@ -11,14 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c3a5519-de13-49ef-9e83-18c050450a59" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/authMiddleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/router/authRouter.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/authController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/controller/authController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/middleware/authMiddleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/models/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/router.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +58,9 @@
       <recent name="$PROJECT_DIR$/api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/api/router" />
+      <recent name="$PROJECT_DIR$/api/controller" />
+      <recent name="$PROJECT_DIR$/api/middleware" />
       <recent name="$PROJECT_DIR$/api" />
     </key>
   </component>
@@ -75,7 +77,7 @@
       <workItem from="1622528535929" duration="27496000" />
       <workItem from="1622617833743" duration="21328000" />
       <workItem from="1622642411935" duration="3299000" />
-      <workItem from="1622705104394" duration="3959000" />
+      <workItem from="1622705104394" duration="7915000" />
     </task>
     <servers />
   </component>
