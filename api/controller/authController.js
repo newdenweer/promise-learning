@@ -66,8 +66,14 @@ const getUsers = (req, res) => {
 				if (!users) {
 					return res.status(400).json({ msg: 'GetUser error' });
 				}
-				//console.log(users.map(u => u.toJSON()));
-				return res.status(200).json(users);
+				return res.status(200).json({
+					users: users.map(user => {
+						return {
+							...user.toJSON(),
+							password: undefined,
+						};
+					}),
+				});
 			})
 			.catch(err => {
 				console.log(err.message);

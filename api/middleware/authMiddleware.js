@@ -7,7 +7,7 @@ const checkJwt = (req, res, next) => {
 			return res.status(403).json({ msg: 'You are not logged' });
 		}
 		let decodedToken = jwt.verify(token, process.env.JWT_SECRET);
-		req.user = decodedToken.id;
+		req.userId = decodedToken.id;
 		next();
 	} catch (e) {
 		console.log(e);
