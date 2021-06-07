@@ -21,7 +21,6 @@ const getNote = (req, res) => {
 	console.log(req.query);
 	db.Note.findAll({ include: db.User })
 		.then(notes => {
-			//console.log(notes.map(n => n.toJSON()));
 			res.json({
 				notes: notes.map(note => {
 					return {
@@ -46,18 +45,14 @@ const getNote = (req, res) => {
 };
 
 const updateNote = (req, res) => {
-	const { id, text } = req.body;
-	if (!id) return res.json({ msg: 'Выберете заметку, которую хотите изменить' });
-	if (!text) return res.json({ msg: 'Введите текст' });
-	db.Note.findAll({ where: { UserId: req.userId } })
-		.then(notes => {
-			let temp = false;
-			notes.map(note => {
-				if (note.dataValues.id === Number(id)) {
-					temp = true;
-				}
-			});
-			if (!temp) return res.json({ msg: 'Изменять можно только свои заметки' });
+	const id = req.params.id;
+	const { text } = req.body;
+	if (!id) throw new Error('Выберете заметку, которую хотите изменить');
+	if (!text) throw new Error('Введите текст');
+	db.Note.findOne({ where: { id: id } })
+		.then(note => {
+			if (!note) throw new Error('Такой заметки не существует');
+			if (note.UserId !== req.userId) throw new Error('Изменять можно только свои заметки');
 		})
 		.then(() => {
 			db.Note.update({ text: text }, { where: { id: id } });
@@ -67,7 +62,7 @@ const updateNote = (req, res) => {
 		})
 		.catch(e => {
 			console.log(e);
-			return res.json({ msg: 'Что-то пошло не так' });
+			return res.json({ msg: e.message });
 		});
 };
 

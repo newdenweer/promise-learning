@@ -6,6 +6,6 @@ const noteRouter = express.Router();
 
 noteRouter.post('/', checkToken, controller.createdNote);
 noteRouter.get('/', checkToken, controller.getNote);
-noteRouter.put('/', checkToken, controller.updateNote);
+noteRouter.put('/:id', checkToken, controller.updateNote);
 
 module.exports = noteRouter;
