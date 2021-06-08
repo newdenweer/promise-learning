@@ -28,12 +28,13 @@ const getNote = (req, res) => {
 
 						UserId: undefined,
 
-						User: note.User
-							? {
-									id: note.User.id,
-									login: note.User.login,
-							  }
-							: null,
+						User:
+							note.User != null
+								? {
+										id: note.User.id,
+										login: note.User.login,
+								  }
+								: null,
 					};
 				}),
 			});
@@ -51,11 +52,11 @@ const updateNote = (req, res) => {
 	if (!text) throw new Error('Введите текст');
 	db.Note.findOne({ where: { id: id } })
 		.then(note => {
-			if (!note) throw new Error('Такой заметки не существует');
+			if (!note) throw new Error(`Заметки [${id}] не существует`);
 			if (note.UserId !== req.userId) throw new Error('Изменять можно только свои заметки');
 		})
 		.then(() => {
-			db.Note.update({ text: text }, { where: { id: id } });
+			return db.Note.update({ text: text }, { where: { id: id } });
 		})
 		.then(() => {
 			return res.json({ msg: 'Заметка успешно обновлена' });
